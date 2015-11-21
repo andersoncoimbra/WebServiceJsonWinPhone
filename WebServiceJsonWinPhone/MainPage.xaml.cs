@@ -48,7 +48,7 @@ namespace WebServiceJsonWinPhone
 
         private void sayHello(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(sayhello), nome.Text);
+            this.Frame.Navigate(typeof(sayhello), nome.Text); //metodo usado para chamar e enviar dados para uma pagina especifica
         }
     }
 }

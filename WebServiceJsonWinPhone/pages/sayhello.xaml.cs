@@ -25,6 +25,7 @@ namespace WebServiceJsonWinPhone.pages
     /// </summary>
     public sealed partial class sayhello : Page
     {
+        //Inicio do NavigationHelper
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
 
@@ -65,9 +66,9 @@ namespace WebServiceJsonWinPhone.pages
         /// <see cref="Frame.Navigate(Type, Object)"/> when this page was initially requested and
         /// a dictionary of state preserved by this page during an earlier
         /// session.  The state will be null the first time a page is visited.</param>
-        private void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
+        private void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)//Metodo que recebe os parametros/dados da pagina anterior
         {
-            string nomeParam = e.NavigationParameter as string;
+            string nomeParam = e.NavigationParameter as string; //o NavigationParameter é a propriedade que amarzena os dados enviados
             if (!string.IsNullOrWhiteSpace(nomeParam))
             {
                 nome.Text = "Olá, " + nomeParam;
