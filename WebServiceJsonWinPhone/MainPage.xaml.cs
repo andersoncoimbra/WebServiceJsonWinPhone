@@ -1,4 +1,5 @@
-﻿using System;
+﻿using WebServiceJsonWinPhone.Common;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -23,28 +24,66 @@ namespace WebServiceJsonWinPhone
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        //Inicio do NavigationHelper
+        private NavigationHelper navigationHelper;
+        private ObservableDictionary defaultViewModel = new ObservableDictionary();
+
         public MainPage()
         {
             this.InitializeComponent();
 
             this.NavigationCacheMode = NavigationCacheMode.Required;
+
+            this.navigationHelper = new NavigationHelper(this);
+            this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
+            this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
         }
+
+        public NavigationHelper NavigationHelper
+        {
+            get { return this.navigationHelper; }
+        }
+
+        public ObservableDictionary DefaultViewModel
+        {
+            get { return this.defaultViewModel; }
+        }
+
+        private void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)//Metodo que recebe os parametros/dados da pagina anterior
+        {
+           
+        }
+
+        private void NavigationHelper_SaveState(object sender, SaveStateEventArgs e)
+        {
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            this.navigationHelper.OnNavigatedTo(e);
+        }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            this.navigationHelper.OnNavigatedFrom(e);
+        }
+
 
         /// <summary>
         /// Invoked when this page is about to be displayed in a Frame.
         /// </summary>
         /// <param name="e">Event data that describes how this page was reached.
         /// This parameter is typically used to configure the page.</param>
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            // TODO: Prepare page for display here.
+        //protected override void OnNavigatedTo(NavigationEventArgs e)
+        //{
+        //    // TODO: Prepare page for display here.
 
-            // TODO: If your application contains multiple pages, ensure that you are
-            // handling the hardware Back button by registering for the
-            // Windows.Phone.UI.Input.HardwareButtons.BackPressed event.
-            // If you are using the NavigationHelper provided by some templates,
-            // this event is handled for you.
-        }
+        //    // TODO: If your application contains multiple pages, ensure that you are
+        //    // handling the hardware Back button by registering for the
+        //    // Windows.Phone.UI.Input.HardwareButtons.BackPressed event.
+        //    // If you are using the NavigationHelper provided by some templates,
+        //    // this event is handled for you.
+        //}
 
         private void sayHello(object sender, RoutedEventArgs e)
         {

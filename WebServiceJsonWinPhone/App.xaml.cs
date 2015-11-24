@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using WebServiceJsonWinPhone.pages;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -94,7 +95,7 @@ namespace WebServiceJsonWinPhone
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                if (!rootFrame.Navigate(typeof(MainPage), e.Arguments))// metodo usado para carregar a primeira pagina
+                if (!rootFrame.Navigate(typeof(Inicio), e.Arguments))// metodo usado para carregar a primeira pagina
                 {
                     throw new Exception("Failed to create initial page");
                 }
