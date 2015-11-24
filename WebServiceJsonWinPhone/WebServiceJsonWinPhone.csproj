@@ -92,8 +92,17 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="pages\ConteinerDePaginaWeb.xaml.cs">
+      <DependentUpon>ConteinerDePaginaWeb.xaml</DependentUpon>
+    </Compile>
     <Compile Include="pages\Inicio.xaml.cs">
       <DependentUpon>Inicio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\PaginaWebMtd1.xaml.cs">
+      <DependentUpon>PaginaWebMtd1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\PaginaWebMtd2.xaml.cs">
+      <DependentUpon>PaginaWebMtd2.xaml</DependentUpon>
     </Compile>
     <Compile Include="pages\sayhello.xaml.cs">
       <DependentUpon>sayhello.xaml</DependentUpon>
@@ -122,7 +131,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="pages\ConteinerDePaginaWeb.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="pages\Inicio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\PaginaWebMtd1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\PaginaWebMtd2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

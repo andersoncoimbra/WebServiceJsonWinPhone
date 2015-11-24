@@ -23,12 +23,12 @@ namespace WebServiceJsonWinPhone.pages
     /// <resumo>
     /// Uma página vazia que pode ser usada sozinha ou por meio da navegação dentro de um quadro.
     /// </resumo>
-    public sealed partial class Inicio : Page
+    public sealed partial class ConteinerDePaginaWeb : Page
     {
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
 
-        public Inicio()
+        public ConteinerDePaginaWeb()
         {
             this.InitializeComponent();
 
@@ -108,14 +108,14 @@ namespace WebServiceJsonWinPhone.pages
 
         #endregion
 
-        private void irParaNavegacao(object sender, RoutedEventArgs e)
+        private void webViewMtd1(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(MainPage));
+            this.Frame.Navigate(typeof(PaginaWebMtd1));
         }
 
-        private void irParaNavegacaoPaginaWeb(object sender, RoutedEventArgs e)
+        private void webViewMtd2(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(ConteinerDePaginaWeb));
+            this.Frame.Navigate(typeof(PaginaWebMtd2));
         }
     }
 }

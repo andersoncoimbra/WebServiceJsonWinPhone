@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using System.Diagnostics;
 
 // O item de template Basic Page está documentado em http://go.microsoft.com/fwlink/?LinkID=390556
 
@@ -23,12 +24,12 @@ namespace WebServiceJsonWinPhone.pages
     /// <resumo>
     /// Uma página vazia que pode ser usada sozinha ou por meio da navegação dentro de um quadro.
     /// </resumo>
-    public sealed partial class Inicio : Page
+    public sealed partial class PaginaWebMtd2 : Page
     {
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
 
-        public Inicio()
+        public PaginaWebMtd2()
         {
             this.InitializeComponent();
 
@@ -108,14 +109,23 @@ namespace WebServiceJsonWinPhone.pages
 
         #endregion
 
-        private void irParaNavegacao(object sender, RoutedEventArgs e)
+        private void irWebView2(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(MainPage));
+            webview2.Source = new Uri(urlPagina.Text);
+            ringProgress.IsActive = true;
+           
         }
 
-        private void irParaNavegacaoPaginaWeb(object sender, RoutedEventArgs e)
+        
+        private void paginaCarregada(object sender, NavigationEventArgs e)
         {
-            this.Frame.Navigate(typeof(ConteinerDePaginaWeb));
+            ringProgress.IsActive = false;
+            webview2.Visibility = Visibility.Visible;
+        }
+
+        private void framaContentLoading(WebView sender, WebViewContentLoadingEventArgs args)
+        {
+
         }
     }
 }
