@@ -1,10 +1,11 @@
 ﻿<Page
-    x:Class="WebServiceJsonWinPhone.pages.Inicio"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:WebServiceJsonWinPhone.pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps"
+    x:Class="WebServiceJsonWinPhone.pages.ControleMapa"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -24,14 +25,13 @@
         <!-- Painel de Título -->
         <StackPanel Grid.Row="0" Margin="19,0,0,0">
             <TextBlock Text="Web Service" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
-            <TextBlock Text="Tela Inicial" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+            <TextBlock Text="Controle Mapa" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
         </StackPanel>
 
         <!--TODO: O conteúdo deve ser colocado dentro da grade a seguir-->
         <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
-            <Button x:Name="btnavegação" Content="Navegação entre Paginas" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Width="244" Click="irParaNavegacao"/>
-            <Button x:Name="btWebView" Content="Conteiner de pagina WEB" HorizontalAlignment="Center" Margin="0,45,0,0" VerticalAlignment="Top" Width="244" Click="irParaNavegacaoPaginaWeb"/>
-            <Button x:Name="btMapControl" Content="Controle de Mapa" HorizontalAlignment="Center" Margin="0,90,0,0" VerticalAlignment="Top" Width="244" Click="irParaControleMaps"/>
+
+            <Maps:MapControl />
 
         </Grid>
     </Grid>
