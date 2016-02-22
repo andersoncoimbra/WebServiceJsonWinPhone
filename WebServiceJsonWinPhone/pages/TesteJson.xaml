@@ -29,7 +29,9 @@
 
         <!--TODO: O conteúdo deve ser colocado dentro da grade a seguir-->
         <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
-
+            <ListView x:Name="Listar">
+                
+            </ListView>
         </Grid>
     </Grid>
 </Page>
