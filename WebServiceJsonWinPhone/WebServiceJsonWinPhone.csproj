@@ -110,6 +110,9 @@
     <Compile Include="pages\sayhello.xaml.cs">
       <DependentUpon>sayhello.xaml</DependentUpon>
     </Compile>
+    <Compile Include="pages\TesteJson.xaml.cs">
+      <DependentUpon>TesteJson.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -155,6 +158,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="pages\sayhello.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\TesteJson.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
